@@ -1,0 +1,23 @@
+plugins {
+  id 'maven-publish'
+  id "ru.myweek-end.freemarker-lib" version "0.0.0.6"
+}
+
+group = 'ru.myweek-end.gradle'
+version = "0.0.0.1"
+
+repositories {
+  mavenLocal()
+}
+
+dependencies {
+  freemarker 'ru.myweek-end.gradle:freemarker-example1:0.0.0.1:freemarker@tar.gz'
+}
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+	  artifact freemarkerPack
+    }
+  }
+}
